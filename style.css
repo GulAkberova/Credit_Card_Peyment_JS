@@ -1,0 +1,286 @@
+@import url("https://fonts.googleapis.com/css2?family=Abel&family=Babylonica&family=Caveat:wght@500&family=Changa:wght@300&family=Cinzel&family=Cookie&family=EB+Garamond&family=IBM+Plex+Sans:ital,wght@0,100;1,100&family=Ibarra+Real+Nova:wght@400;500;700&family=Manrope:wght@300;400;700&family=Montserrat:wght@200&family=Noto+Serif+JP:wght@500&family=Nunito+Sans:wght@200&family=Oswald&family=Parisienne&family=Playfair+Display&family=Poppins:wght@200;300;400;500;600;700;800&family=Public+Sans:wght@100;200;400&family=Quicksand:wght@300;400;500;600&family=Raleway:wght@100;200;300;400;500&family=Roboto+Slab:wght@100&family=Satisfy&family=Smooch&family=Source+Serif+Pro:wght@200&family=Titillium+Web:wght@200;300&family=Vollkorn:wght@400;500&display=swap");
+
+:root {
+  --main-color: #d90429;
+  --main-lighter-color: #ef233c;
+  --light-color: #8d99ae;
+  --lighter-color: #edf2f4;
+  --dark-color: #2b2d42;
+
+  --font-smaller: 12px;
+  --font-bigger: 16px;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Nunito", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.8;
+  color: var(--dark-color);
+  background-color: #f9f5f5;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul {
+  list-style: none;
+}
+strong {
+  font-weight: 800;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-animation: none;
+  margin: 0;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1em;
+}
+.outer {
+  margin-top: 4em;
+  border-radius: 1.8em;
+  padding: 1em 1em;
+  background-color: white;
+  border: 1px solid black;
+}
+header {
+  margin-bottom: 4em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header .logo {
+  font-size: 2em;
+}
+header .logo strong {
+  color: var(--main-lighter-color);
+}
+header .time-left {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  line-height: 1.2;
+}
+.payment,
+.payment :where(form > div:not(.card-number), .card-expiration .input) {
+  display: flex;
+  align-items: center;
+}
+.payment {
+  flex-direction: column-reverse;
+  gap: 2em;
+}
+.payment form > div {
+  margin-bottom: 1.5em;
+  flex-direction: column;
+  align-items: stretch;
+}
+.payment form > div:not(.card-number) > div {
+  flex: 1 0 50%;
+  margin: 0.5em 0;
+}
+
+.payment .left p {
+  font-size: var(--font-bigger);
+  font-weight: 700;
+}
+.payment .left span {
+  color: var(--light-color);
+}
+.payment .left input {
+  font-weight: 600;
+  font-size: var(--font-bigger);
+  padding: 0 1em;
+  line-height: 46px;
+  border-radius: 8px;
+  width: 100%;
+  border: 2px solid var(--light-color);
+  outline: transparent;
+  --webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  outline: none;
+}
+.payment .left input::placeholder {
+  font-weight: 300;
+  font-family: inherit;
+  letter-spacing: 2px;
+  color: var(--light-color);
+  font-size: var(--font-smaller);
+  opacity: 0.5;
+}
+.payment .left input:focus {
+  outline-color: var(--main-color);
+  background-color: var(--lighter-color);
+}
+.payment .card-number-box {
+  position: relative;
+  margin-top: 1em;
+}
+.payment .card-number-box input {
+  padding: 0 4em;
+}
+.payment .card-number-box input::placeholder {
+  font-size: inherit;
+}
+.payment form .cc-logo {
+  position: absolute;
+  top: 50%;
+  left: 1.2em;
+  margin-top: -10px;
+}
+.payment .cc-logo::before,
+.payment .cc-logo::after {
+  content: "";
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--main-lighter-color);
+}
+.payment .cc-logo::after {
+  background-color: #f79e1c;
+  margin-left: -7px;
+  opacity: 0.75;
+}
+.payment .card-expiration .input {
+  gap: 10%;
+  text-align: center;
+}
+.payment .card-expiration input {
+  text-align: center;
+}
+.payment form button {
+  font-size: var(--font-bigger);
+  font-weight: 600;
+  border: 0;
+  background-color: var(--main-lighter-color);
+  color: white;
+  line-height: 56px;
+  border-radius: 8px;
+  width: 100%;
+  cursor: pointer;
+  --webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+.payment form button:hover {
+  background-color: var(--main-color);
+}
+.payment .right {
+  max-width: 300px;
+  width: 100%;
+}
+.payment .card-virtual {
+  position: relative;
+  margin: 0 2em -5em;
+  padding: 2em;
+  line-height: 2em;
+  font-size: var(--font-bigger);
+  font-weight: 600;
+  color: white;
+  background-color: var(--dark-color);
+  border-radius: 10px;
+  box-shadow: rgb(43 45 66 / 30%) 0 20px 30px;
+  z-index: 1;
+  overflow: hidden;
+}
+.payment .card-virtual .cc-logo {
+  position: relative;
+  transform: scale(5);
+  text-align: center;
+}
+.payment .card-virtual .name-holder {
+  margin: 4em 0 0;
+}
+.payment .chip {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin: 0 -1.5em -1.5em;
+  opacity: 0.5;
+}
+.payment .chip i {
+  width: 30px;
+  fill: #7e6b00;
+  margin-top: 0.5em;
+}
+.payment .card-virtual .highlight {
+  position: relative;
+  height: auto;
+  margin: 2em -2em -2em;
+  background-color: var(--light-color);
+  border-radius: 0 0 10px 10px;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+}
+.payment .right .receipt {
+  position: relative;
+  padding: 8em 2em 2em;
+  border-radius: 10px;
+  background-color: var(--lighter-color);
+}
+.payment .right .receipt ul li {
+  display: flex;
+  justify-content: space-between;
+  line-height: 3em;
+  border-bottom: 1px dotted var(--light-color);
+}
+.payment .right .receipt ul li span:first-child {
+  color: var(--light-color);
+}
+.payment .right .receipt ul li span:last-child {
+  font-weight: 700;
+}
+.payment .right .receipt .total {
+  text-align: right;
+  margin-top: 1em;
+}
+.payment .receipt .total .price {
+  font-size: 1.5em;
+}
+@media screen and (min-width: 576px) {
+  .outer {
+    padding: 2em;
+  }
+  .payment form > div {
+    flex-direction: row;
+  }
+  .payment form > div .text {
+    padding-right: 1em;
+  }
+}
+@media screen and (min-width: 992px) {
+  header {
+    max-width: 70%;
+    padding-right: 4em;
+    margin-bottom: 0;
+  }
+  .payment {
+    flex-direction: row;
+    gap: 0;
+  }
+  .payment .left {
+    flex: 1 0 65%;
+    padding-right: 4em;
+  }
+  .payment .right {
+    flex: 1 0 35%;
+    align-self: flex-end;
+  }
+}
